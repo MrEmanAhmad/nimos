@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Nimo's Limerick | Pizza, Burgers & Takeaway Knocklong</title>
+    <meta name="description" content="Nimo's Limerick - Order pizza, burgers, kebabs & more for delivery or pickup in Knocklong, Co. Limerick. Fresh ingredients, fast service. Order online now!" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#e94560" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Nimo's" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://nimos.emanahmad.cloud/" />
+
+    <!-- OpenGraph & Twitter fallback meta (enhanced by React Helmet per-page) -->
+    <meta property="og:title" content="Nimo's Limerick | Pizza, Burgers & Takeaway Knocklong" />
+    <meta property="og:description" content="Order pizza, burgers, kebabs & more for delivery or pickup in Knocklong, Co. Limerick." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nimos.emanahmad.cloud/" />
+    <meta property="og:image" content="https://nimos.emanahmad.cloud/images/og-banner.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:locale" content="en_IE" />
+    <meta property="og:site_name" content="Nimo's Limerick" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nimo's Limerick | Pizza, Burgers & Takeaway Knocklong" />
+    <meta name="twitter:description" content="Order pizza, burgers, kebabs & more for delivery or pickup in Knocklong, Co. Limerick." />
+    <meta name="twitter:image" content="https://nimos.emanahmad.cloud/images/og-banner.png" />
+
+    <!-- Self-hosted Inter font (eliminates Google Fonts external requests) -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/inter.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/fonts/inter.css" /></noscript>
+
+    <!-- Preload hero image (LCP element) for faster initial paint -->
+    <link rel="preload" as="image" type="image/webp" href="/images/hero-bg.webp" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/webp" href="/images/logo.webp" />
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+
+    <!-- Schema.org Structured Data: Restaurant + LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Restaurant", "LocalBusiness"],
+      "@id": "https://nimos.emanahmad.cloud/#restaurant",
+      "name": "Nimo's Limerick",
+      "image": "https://nimos.emanahmad.cloud/images/logo.png",
+      "url": "https://nimos.emanahmad.cloud",
+      "telephone": "+353 6243300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "The Cross, Knocklong East",
+        "addressLocality": "Knocklong",
+        "addressRegion": "Co. Limerick",
+        "postalCode": "V94TY05",
+        "addressCountry": "IE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.4631,
+        "longitude": -8.5672
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Thursday", "Friday", "Saturday"],
+          "opens": "15:00",
+          "closes": "22:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "15:00",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday"],
+          "opens": "15:00",
+          "closes": "22:30"
+        }
+      ],
+      "servesCuisine": ["Pizza", "Burgers", "Kebabs", "Fish & Chips", "Chicken", "Fast Food"],
+      "priceRange": "€€",
+      "menu": "https://nimos.emanahmad.cloud/menu",
+      "acceptsReservations": false,
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Credit Card",
+      "areaServed": [
+        {"@type": "City", "name": "Knocklong"},
+        {"@type": "City", "name": "Hospital"},
+        {"@type": "City", "name": "Kilmallock"},
+        {"@type": "City", "name": "Bruff"},
+        {"@type": "City", "name": "Limerick"}
+      ]
+    }
+    </script>
+
+    <!-- Schema.org: WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Nimo's Limerick",
+      "url": "https://nimos.emanahmad.cloud",
+      "potentialAction": {
+        "@type": "OrderAction",
+        "target": "https://nimos.emanahmad.cloud/menu",
+        "name": "Order Food Online"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

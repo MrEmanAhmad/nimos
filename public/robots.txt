@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /kitchen
+Disallow: /checkout
+Disallow: /account
+Disallow: /track/
+Disallow: /login
+Disallow: /register
+
+# Crawl-delay for polite crawling
+Crawl-delay: 2
+
+Sitemap: https://nimos.emanahmad.cloud/sitemap.xml

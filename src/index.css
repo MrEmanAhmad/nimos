@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #e94560;
+  --color-primary-dark: #d13350;
+  --color-secondary: #f5a623;
+  --color-dark: #0f0f0f;
+  --color-darker: #080808;
+  --color-card: #1a1a2e;
+  --color-card-hover: #222240;
+  --color-text: #e0e0e0;
+  --color-text-muted: #a0a0a0;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-darker);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  min-width: 320px;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* ── Accessibility: Skip Navigation Link ── */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 9999;
+}
+.skip-to-main:focus {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  padding: 12px 24px;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* ── Accessibility: Focus-visible styles ── */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Remove the default outline for mouse clicks, keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 4px; }
+
+/* Kitchen display - subtle pulse for new orders */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; box-shadow: 0 0 20px rgba(233, 69, 96, 0.3); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* PWA install banner slide-up animation */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+/* Safe area insets for notch devices (iPhone X+) */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .fixed.bottom-4 {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ── Image placeholder / skeleton loading ── */
+
+/* Wrapper for images: shows a dark placeholder bg that fades out when the image loads */
+.img-placeholder {
+  background-color: #1a1a2e;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Subtle shimmer animation while loading */
+.img-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  animation: img-shimmer 1.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes img-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Image inside the placeholder fades in when loaded */
+.img-placeholder img {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+.img-placeholder img.loaded {
+  opacity: 1;
+}
+
+/* For hero images that should show immediately without fade */
+.img-placeholder--eager img {
+  opacity: 1;
+  transition: none;
+}
+
+/* When JS is disabled or not needed, show images immediately via CSS :not selector */
+.img-placeholder:has(img[loading="eager"]) img {
+  opacity: 1;
+  transition: none;
+}
+
+.img-placeholder:has(img[loading="eager"])::before {
+  display: none;
+}
+
+/* Print styles for kitchen order detail */
+@media print {
+  body { background: white !important; color: black !important; }
+  .print\:hidden { display: none !important; }
+  .print\:bg-white { background: white !important; }
+  .print\:text-black { color: black !important; }
+}

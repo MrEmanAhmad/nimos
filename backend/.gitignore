@@ -1,0 +1,7 @@
+node_modules/
+*.db
+backups/
+.jwt-secret
+*.db-shm
+*.db-wal
+public/

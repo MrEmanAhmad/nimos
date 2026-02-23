@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#e94560" />
+    <title>Nimo's - Offline</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        background: #080808;
+        color: #e0e0e0;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 1rem;
+      }
+      .container {
+        text-align: center;
+        max-width: 420px;
+      }
+      .icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+      h1 {
+        color: #e94560;
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 0.75rem;
+      }
+      p {
+        color: #a0a0a0;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      .retry-btn {
+        display: inline-block;
+        background: #e94560;
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 0.75rem;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        min-height: 44px;
+        min-width: 44px;
+        transition: background 0.2s;
+      }
+      .retry-btn:hover {
+        background: #d13350;
+      }
+      .phone {
+        margin-top: 2rem;
+        color: #a0a0a0;
+        font-size: 0.875rem;
+      }
+      .phone a {
+        color: #e94560;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="icon" aria-hidden="true">&#127829;</span>
+      <h1>You're Offline</h1>
+      <p>It looks like you've lost your internet connection. Please check your connection and try again.</p>
+      <button class="retry-btn" onclick="window.location.reload()">Try Again</button>
+      <p class="phone">Or call us to order: <a href="tel:+3536243300">062 43300</a></p>
+    </div>
+  </body>
+</html>
